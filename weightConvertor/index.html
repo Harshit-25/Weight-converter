@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+	<style >
+		body{
+			margin-top:90px;
+			background: #333;
+			color: #fff;
+
+		}
+	</style>
+	<title>weightconvertor</title>
+</head>
+<body>
+	<div class="container">
+		<div class="row">
+		  <div class="col-md-6 offset-md-3">
+			<h1 class="display-4 text-center mb-5 ">Weight Convertor</h1>
+			<form >
+				<div class="form-group">
+					<input id="lbsNumber" type="number" class="form-control form-control-lg mb-3" placeholder="Enter in pounds">
+					<div id="output">
+						<div class="card card-primary mb-2">
+							<div class="card-block">
+								<h4>Grams:</h4>
+								<div id="gramsOutput"></div>
+							</div>
+						</div>
+						<div class="card card-success mb-2">
+							<div class="card-block">
+								<h4>KiloGrams:</h4>
+								<div id="kgOutput"></div>
+							</div>
+						</div>
+						<div class="card card-warning mb-2">
+							<div class="card-block">
+								<h4>ounce</h4>
+								<div id="ouOutput"></div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</form>
+			
+		</div>
+	       </div>
+	          </div>
+
+
+
+	          <script>
+
+	          	document.getElementById('output').style.visibility="hidden";
+                document.getElementById('lbsNumber').addEventListener('input',function(e){
+                	document.getElementById('output').style.visibility="visible";
+
+                	var lbs=e.target.value;
+
+                	document.getElementById('gramsOutput').innerHTML=lbs/0.0022046;
+                	document.getElementById('kgOutput').innerHTML=lbs/2.2046;
+                	document.getElementById('ouOutput').innerHTML=lbs*16;
+                })
+
+
+	          </script>
+	
+</body>
+</html>
